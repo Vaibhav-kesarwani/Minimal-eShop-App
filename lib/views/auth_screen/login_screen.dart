@@ -1,10 +1,12 @@
 import 'package:ecommerceapp/consts/consts.dart';
 import 'package:ecommerceapp/consts/lists.dart';
+import 'package:ecommerceapp/views/auth_screen/signup_screen.dart';
 import 'package:ecommerceapp/widgets_common/applogo_widget.dart';
 import 'package:ecommerceapp/widgets_common/bg_widget.dart';
 import 'package:ecommerceapp/widgets_common/custom_textfield.dart';
 import 'package:ecommerceapp/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -45,7 +47,9 @@ class LoginScreen extends StatelessWidget {
                     color: lightGolden,
                     title: signup,
                     textColor: redColor,
-                    onPress: () {},
+                    onPress: () {
+                      Get.to(() => const SignupScreen());
+                    },
                   ).box.width(context.screenWidth - 50).make(),
                   10.heightBox,
                   loginWith.text.color(fontGrey).make(),
