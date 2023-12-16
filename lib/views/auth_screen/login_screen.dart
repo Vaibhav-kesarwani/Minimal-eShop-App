@@ -1,4 +1,5 @@
 import 'package:ecommerceapp/consts/consts.dart';
+import 'package:ecommerceapp/consts/lists.dart';
 import 'package:ecommerceapp/widgets_common/applogo_widget.dart';
 import 'package:ecommerceapp/widgets_common/bg_widget.dart';
 import 'package:ecommerceapp/widgets_common/custom_textfield.dart';
@@ -12,6 +13,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return bgWidget(
       Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Center(
           child: Column(
             children: [
@@ -19,7 +21,7 @@ class LoginScreen extends StatelessWidget {
               applogoWidget(),
               10.heightBox,
               "Log in to $appname".text.fontFamily(bold).white.size(18).make(),
-              10.heightBox,
+              15.heightBox,
               Column(
                 children: [
                   customTextField(hint: emailHint, title: email),
@@ -45,10 +47,26 @@ class LoginScreen extends StatelessWidget {
                     textColor: redColor,
                     onPress: () {},
                   ).box.width(context.screenWidth - 50).make(),
-
                   10.heightBox,
                   loginWith.text.color(fontGrey).make(),
                   5.heightBox,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      3,
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 25,
+                          child: Image.asset(
+                            socialIconList[index],
+                            width: 30,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               )
                   .box
@@ -56,6 +74,7 @@ class LoginScreen extends StatelessWidget {
                   .rounded
                   .padding(const EdgeInsets.all(16))
                   .width(context.screenWidth - 70)
+                  .shadowSm
                   .make(),
             ],
           ),
