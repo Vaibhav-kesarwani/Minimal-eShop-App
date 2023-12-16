@@ -1,4 +1,9 @@
+import 'package:ecommerceapp/consts/consts.dart';
+import 'package:ecommerceapp/consts/images.dart';
+import 'package:ecommerceapp/views/auth_screen/login_screen.dart';
+import 'package:ecommerceapp/widgets_common/applogo_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -8,6 +13,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
+  changeScreen() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const LoginScreen());
+    });
+  }
+
+  @override
+  void initState() {
+    changeScreen();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +32,22 @@ class SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            Container(),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Image.asset(
+                icSplashBg,
+                width: 300,
+              ),
+            ),
+            20.heightBox,
+            applogoWidget(),
+            10.heightBox,
+            appname.text.fontFamily(bold).size(22).white.make(),
+            5.heightBox,
+            appversion.text.white.make(),
+            const Spacer(),
+            credits.text.white.fontFamily(semibold).make(),
+            30.heightBox,
           ],
         ),
       ),
