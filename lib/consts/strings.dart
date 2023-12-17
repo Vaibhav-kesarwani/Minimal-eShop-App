@@ -18,4 +18,16 @@ const termAndCond = "Terms and Conditions";
 const alreadyHaveAccount = "Already have an account?  ";
 
 // home strings
-const home = "Home", categories = "Categories", cart = "Cart", account = "Account";
+const home = "Home",
+    categories = "Categories",
+    cart = "Cart",
+    account = "Account";
+
+// home screen strings
+const searchAnything = "Search anything....",
+    todayDeal = "Today's Deal",
+    flashSale = "Flash Sale",
+    topSeller = "Top Seller",
+    brand = "Brand",
+    topCategory = "Top Category",
+    featuredCategories = "Featured Categories";

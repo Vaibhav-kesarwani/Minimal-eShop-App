@@ -1,79 +1,34 @@
-import 'package:ecommerceapp/consts/colors.dart';
-import 'package:ecommerceapp/consts/images.dart';
-import 'package:ecommerceapp/consts/strings.dart';
-import 'package:ecommerceapp/consts/styles.dart';
-import 'package:ecommerceapp/controllers/home_controller.dart';
+import 'package:ecommerceapp/consts/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(HomeController());
-
-    var navbarItem = [
-      BottomNavigationBarItem(
-        icon: Image.asset(
-          icHome,
-          width: 26,
-        ),
-        label: home,
-      ),
-      BottomNavigationBarItem(
-        icon: Image.asset(
-          icCategories,
-          width: 26,
-        ),
-        label: categories,
-      ),
-      BottomNavigationBarItem(
-        icon: Image.asset(
-          icCart,
-          width: 26,
-        ),
-        label: cart,
-      ),
-      BottomNavigationBarItem(
-        icon: Image.asset(
-          icProfile,
-          width: 26,
-        ),
-        label: account,
-      ),
-    ];
-
-    var navBody = [
-      Container(color: Colors.blue),
-      Container(color: Colors.amber),
-      Container(color: Colors.purple),
-      Container(color: Colors.cyan),
-    ];
-
-    return Scaffold(
-      body: Column(
-        children: [
-          Obx(
-            () => Expanded(
-              child: navBody.elementAt(
-                controller.currentNavIndex.value,
+    return Container(
+      padding: const EdgeInsets.all(12),
+      color: lightGrey,
+      width: context.screenWidth,
+      height: context.screenHeight,
+      child: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              height: 60,
+              color: lightGrey,
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: whiteColor,
+                  hintText: searchAnything,
+                  hintStyle: TextStyle(color: textfieldGrey),
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          selectedItemColor: redColor,
-          selectedLabelStyle: const TextStyle(fontFamily: semibold),
-          backgroundColor: whiteColor,
-          type: BottomNavigationBarType.fixed,
-          items: navbarItem,
-          onTap: (value) {
-            controller.currentNavIndex.value = value;
-          },
+          ],
         ),
       ),
     );
