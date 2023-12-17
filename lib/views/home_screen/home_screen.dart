@@ -1,4 +1,5 @@
 import 'package:ecommerceapp/consts/consts.dart';
+import 'package:ecommerceapp/consts/lists.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
+            // Search bar
             Container(
               alignment: Alignment.center,
               height: 60,
@@ -27,6 +29,25 @@ class HomeScreen extends StatelessWidget {
                   hintStyle: TextStyle(color: textfieldGrey),
                 ),
               ),
+            ),
+            // Swipers brands
+            VxSwiper.builder(
+              aspectRatio: 16 / 9,
+              autoPlay: true,
+              height: 150,
+              enlargeCenterPage: true,
+              itemCount: sliderList.length,
+              itemBuilder: (context, index) {
+                return Image.asset(
+                  sliderList[index],
+                  fit: BoxFit.fitWidth,
+                )
+                    .box
+                    .rounded
+                    .clip(Clip.antiAlias)
+                    .margin(const EdgeInsets.symmetric(horizontal: 8))
+                    .make();
+              },
             ),
           ],
         ),
