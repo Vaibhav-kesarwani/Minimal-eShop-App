@@ -2,13 +2,17 @@ import 'package:ecommerceapp/consts/colors.dart';
 import 'package:ecommerceapp/consts/images.dart';
 import 'package:ecommerceapp/consts/strings.dart';
 import 'package:ecommerceapp/consts/styles.dart';
+import 'package:ecommerceapp/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(HomeController());
+
     var navbarItem = [
       BottomNavigationBarItem(
         icon: Image.asset(
@@ -41,17 +45,36 @@ class HomeScreen extends StatelessWidget {
     ];
 
     var navBody = [
-      
+      Container(color: Colors.blue),
+      Container(color: Colors.amber),
+      Container(color: Colors.purple),
+      Container(color: Colors.cyan),
     ];
 
     return Scaffold(
-      body: Container(),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: redColor,
-        selectedLabelStyle: const TextStyle(fontFamily: semibold),
-        backgroundColor: whiteColor,
-        type: BottomNavigationBarType.fixed,
-        items: navbarItem,
+      body: Column(
+        children: [
+          Obx(
+            () => Expanded(
+              child: navBody.elementAt(
+                controller.currentNavIndex.value,
+              ),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          currentIndex: controller.currentNavIndex.value,
+          selectedItemColor: redColor,
+          selectedLabelStyle: const TextStyle(fontFamily: semibold),
+          backgroundColor: whiteColor,
+          type: BottomNavigationBarType.fixed,
+          items: navbarItem,
+          onTap: (value) {
+            controller.currentNavIndex.value = value;
+          },
+        ),
       ),
     );
   }
