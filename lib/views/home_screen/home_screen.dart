@@ -229,6 +229,52 @@ class HomeScreen extends StatelessWidget {
                             .make();
                       },
                     ),
+                    // All products section
+                    20.heightBox,
+                    GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: 6,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 8,
+                        crossAxisSpacing: 8,
+                        mainAxisExtent: 300,
+                      ),
+                      itemBuilder: (context, index) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              imgP7,
+                              height: 200,
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            const Spacer(),
+                            "Laptop 4GB/64GB"
+                                .text
+                                .fontFamily(semibold)
+                                .color(darkFontGrey)
+                                .make(),
+                            10.heightBox,
+                            "\$600"
+                                .text
+                                .color(redColor)
+                                .fontFamily(bold)
+                                .size(16)
+                                .make(),
+                          ],
+                        )
+                            .box
+                            .white
+                            .margin(const EdgeInsets.symmetric(horizontal: 4))
+                            .rounded
+                            .padding(const EdgeInsets.all(12))
+                            .make();
+                      },
+                    ),
                   ],
                 ),
               ),
