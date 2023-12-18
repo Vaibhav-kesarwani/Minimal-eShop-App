@@ -92,6 +92,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                     10.heightBox,
+                    // Buttons for easy access
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(
@@ -143,6 +144,90 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ).toList(),
                       ),
+                    ),
+                    // Featured products
+                    20.heightBox,
+                    Container(
+                      padding: const EdgeInsets.all(15),
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(icSplashBg),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.center,
+                        ),
+                        color: redColor,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          featuredProduct.text.white
+                              .fontFamily(bold)
+                              .size(18)
+                              .make(),
+                          10.heightBox,
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: List.generate(
+                                6,
+                                (index) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      imgP1,
+                                      width: 150,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    10.heightBox,
+                                    "Laptop 4GB/64GB"
+                                        .text
+                                        .fontFamily(semibold)
+                                        .color(darkFontGrey)
+                                        .make(),
+                                    10.heightBox,
+                                    "\$600"
+                                        .text
+                                        .color(redColor)
+                                        .fontFamily(bold)
+                                        .size(16)
+                                        .make(),
+                                  ],
+                                )
+                                    .box
+                                    .rounded
+                                    .margin(
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                    )
+                                    .white
+                                    .padding(const EdgeInsets.all(8))
+                                    .make(),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Third swiper
+                    20.heightBox,
+                    VxSwiper.builder(
+                      aspectRatio: 16 / 9,
+                      reverse: true,
+                      autoPlay: true,
+                      height: 150,
+                      enlargeCenterPage: true,
+                      itemCount: thirdSliderList.length,
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          thirdSliderList[index],
+                          fit: BoxFit.fill,
+                        )
+                            .box
+                            .rounded
+                            .clip(Clip.antiAlias)
+                            .margin(const EdgeInsets.symmetric(horizontal: 8))
+                            .make();
+                      },
                     ),
                   ],
                 ),

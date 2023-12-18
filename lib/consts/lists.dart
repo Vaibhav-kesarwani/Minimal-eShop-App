@@ -21,6 +21,17 @@ const secondSliderList = [
   imgSs4,
 ];
 
+const thirdSliderList = [
+  imgSlider1,
+  imgSs1,
+  imgSlider2,
+  imgSs2,
+  imgSlider3,
+  imgSs3,
+  imgSlider4,
+  imgSs4,
+];
+
 const featuredImages1 = [
   imgS1,
   imgS2,
