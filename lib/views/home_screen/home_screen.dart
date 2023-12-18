@@ -1,5 +1,6 @@
 import 'package:ecommerceapp/consts/consts.dart';
 import 'package:ecommerceapp/consts/lists.dart';
+import 'package:ecommerceapp/views/home_screen/components/featured_button.dart';
 import 'package:ecommerceapp/widgets_common/home_buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -77,10 +78,10 @@ class HomeScreen extends StatelessWidget {
                       autoPlay: true,
                       height: 150,
                       enlargeCenterPage: true,
-                      itemCount: SecondSliderList.length,
+                      itemCount: secondSliderList.length,
                       itemBuilder: (context, index) {
                         return Image.asset(
-                          SecondSliderList[index],
+                          secondSliderList[index],
                           fit: BoxFit.fill,
                         )
                             .box
@@ -111,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    10.heightBox,
+                    20.heightBox,
                     // Featured Category
                     Align(
                       alignment: Alignment.centerLeft,
@@ -120,6 +121,28 @@ class HomeScreen extends StatelessWidget {
                           .size(18)
                           .fontFamily(bold)
                           .make(),
+                    ),
+                    20.heightBox,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                          3,
+                          (index) => Column(
+                            children: [
+                              featuredButton(
+                                icon: featuredImages1[index],
+                                title: featuredTitles1[index],
+                              ),
+                              10.heightBox,
+                              featuredButton(
+                                icon: featuredImages2[index],
+                                title: featuredTitles2[index],
+                              ),
+                            ],
+                          ),
+                        ).toList(),
+                      ),
                     ),
                   ],
                 ),
