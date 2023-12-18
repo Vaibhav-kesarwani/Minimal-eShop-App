@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return bgWidget(
-      Scaffold(
+      child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Center(
           child: Column(

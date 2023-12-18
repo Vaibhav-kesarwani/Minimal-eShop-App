@@ -269,7 +269,12 @@ class HomeScreen extends StatelessWidget {
                         )
                             .box
                             .white
-                            .margin(const EdgeInsets.symmetric(horizontal: 4))
+                            .margin(
+                              const EdgeInsets.symmetric(
+                                horizontal: 4,
+                                vertical: 3,
+                              ),
+                            )
                             .rounded
                             .padding(const EdgeInsets.all(12))
                             .make();
