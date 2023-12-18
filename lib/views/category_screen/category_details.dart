@@ -1,6 +1,8 @@
 import 'package:ecommerceapp/consts/consts.dart';
+import 'package:ecommerceapp/views/category_screen/item_details.dart';
 import 'package:ecommerceapp/widgets_common/bg_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class CategoryDetails extends StatelessWidget {
   const CategoryDetails({required this.title, super.key});
@@ -85,7 +87,12 @@ class CategoryDetails extends StatelessWidget {
                         .rounded
                         .outerShadowSm
                         .padding(const EdgeInsets.all(12))
-                        .make();
+                        .make()
+                        .onTap(() {
+                      Get.to(
+                        () => const ItemDetails(title: "Dummy item"),
+                      );
+                    });
                   },
                 ),
               ),
