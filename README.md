@@ -64,4 +64,4 @@ If you have any questions or need further assistance, please contact:
 
 - **Author:** Vaibhav Kesarwani
 - **Email:** vaibhavkesarwani100@gmail.com
-- **Project Link:** [https://github.com/Vaibhav-kesarwani/eShop-App]{https://github.com/Vaibhav-kesarwani/eShop-App)
+- **Project Link:** [https://github.com/Vaibhav-kesarwani/eShop-App](https://github.com/Vaibhav-kesarwani/eShop-App)
