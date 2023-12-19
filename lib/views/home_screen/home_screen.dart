@@ -2,7 +2,6 @@ import 'package:ecommerceapp/consts/consts.dart';
 import 'package:ecommerceapp/consts/lists.dart';
 import 'package:ecommerceapp/views/home_screen/components/featured_button.dart';
 import 'package:ecommerceapp/widgets_common/home_buttons.dart';
-import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

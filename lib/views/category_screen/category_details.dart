@@ -1,7 +1,6 @@
 import 'package:ecommerceapp/consts/consts.dart';
 import 'package:ecommerceapp/views/category_screen/item_details.dart';
 import 'package:ecommerceapp/widgets_common/bg_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class CategoryDetails extends StatelessWidget {

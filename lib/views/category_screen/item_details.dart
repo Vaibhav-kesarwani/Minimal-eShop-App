@@ -1,5 +1,4 @@
 import 'package:ecommerceapp/consts/consts.dart';
-import 'package:flutter/material.dart';
 
 class ItemDetails extends StatelessWidget {
   const ItemDetails({super.key, required this.title});
