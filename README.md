@@ -1,4 +1,4 @@
-# eShop-App
+# Minimal-eShop-App
 
 The shop Where you can buy stunnig items.
 
